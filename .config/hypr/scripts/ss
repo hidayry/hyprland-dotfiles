@@ -1,0 +1,110 @@
+#!/usr/bin/env bash
+
+# config rofi
+rofi_command="rofi -theme $HOME/.config/rofi/SS/ss.rasi"
+
+# Icons
+icon="$HOME/.config/mako/icons/image.svg"
+icon2="$HOME/.config/mako/icons/screenshot.svg"
+
+# Buttons
+layout=$(grep BUTTON "$HOME"/.config/rofi/SS/ss.rasi | cut -d'=' -f2 | tr -d '[:blank:],*/')
+if [[ "$layout" == "TRUE" ]]; then
+    screen=" "
+    area=" "
+    timer="󰔜 "
+    video_audio=""
+    video=""
+    area_video=""
+    stop=""
+
+else
+    screen="  Capture Fullscreen"
+    area="  Capture Area"
+    timer="󰔜  Take in 10s"
+    video_audio="  Recording video & audio"
+    video="  Recording video only"
+    area_video="  Record selected area"
+    stop="  Stop recording"
+fi
+
+# Notify and view screenshot
+show_notification () {
+    notify-send -h string:x-canonical-private-synchronous:hypr-cfg -u low -i "$icon" "Screenshot Saved..."
+}
+
+recording_notif () {
+    notify-send -h string:x-canonical-private-synchronous:hypr-cfg -u low -i "$icon2" "Recording Saved..."
+}
+
+# countdown
+countdown () {
+    for sec in $(seq "$1" -1 1); do
+        notify-send -h string:x-canonical-private-synchronous:hypr-cfg -u low -i "$icon" "Taking shot in : $sec"
+        sleep 0.5
+    done
+}
+
+# Function to take a screenshot of the selected area
+take_selected_area_screenshot() {
+    grimblast --freeze copysave area
+    show_notification
+}
+
+# Function to take a screenshot after a specified time interval
+take_timed_screenshot() {
+    grimblast --wait 10 --freeze copysave screen
+    show_notification
+}
+
+# Function to take a screenshot of the entire screen
+take_fullscreen_screenshot() {
+    grimblast --freeze copysave screen
+    show_notification
+}
+
+# Record audio and video
+record_video_audio() {
+    wf-recorder --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor -f "$(xdg-user-dir VIDEOS)/$(date +'%H:%M:%S_%d-%m-%Y.mp4')"
+    recording_notif
+}
+
+# Record video only
+record_video() {
+    wf-recorder -f "$(xdg-user-dir VIDEOS)/$(date +'%H:%M:%S_%d-%m-%Y.mp4')"
+    recording_notif
+}
+
+# Record video only
+record_selected_video() {
+    wf-recorder -g "$(slurp)" -f "$(xdg-user-dir VIDEOS)/$(date +'%H:%M:%S_%d-%m-%Y.mp4')"
+    recording_notif
+}
+
+# Rofi menu
+options="$screen\n$area\n$timer\n$video_audio\n$video\n$area_video\n$stop"
+
+chosen="$(echo -e "$options" | $rofi_command -p 'Take A Shot & Recording' -dmenu)"
+case $chosen in
+    "$screen")
+        take_fullscreen_screenshot
+        ;;
+    "$area")
+        take_selected_area_screenshot
+        ;;
+    "$timer")
+        take_timed_screenshot
+        ;;
+    "$video_audio")
+        record_video_audio
+        ;;
+    "$video")
+        record_video
+        ;;
+    "$area_video")
+        record_selected_video
+        ;;
+    "$stop")
+        killall -s SIGINT wf-recorder
+        ;;
+esac

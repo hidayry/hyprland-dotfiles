@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pkill waybar
+sleep 0.1
+waybar -c ~/.config/waybar/hypr/config-hypr -s ~/.config/waybar/hypr/hypr_style.css &
