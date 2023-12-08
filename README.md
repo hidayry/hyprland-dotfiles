@@ -52,6 +52,13 @@ sudo pacman -S --needed hyprland swaybg waybar swayidle swww swaylock-effects wf
 ```sh
 yay -S --needed tela-circle-icon-theme-manjaro material-gtk-theme-deepocean-git wl-clipboard-history-git grimblast-git ttf-jetbrains-mono-nerd
 ```
+- **zap zsh**
+
+```sh
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
+```
+
+for zap zsh in this [link](https://github.com/zap-zsh/zap)
 
 <table align="center">
    <tr>
