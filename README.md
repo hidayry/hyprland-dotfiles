@@ -44,7 +44,7 @@ cp -r home/* ~/
 Dependencies :
 
 ```sh
-sudo pacman -S --needed hyprland swaybg waybar swayidle swww swaylock-effects gtklock wf-recorder rofi-lbonn-wayland dmenu brightnessctl mako cliphist grim slurp pamixer polkit-gnome starship nwg-look xdg-desktop-portal-hyprland xdg-user-dirs xdg-utils gvfs gvfs-mtp gvfs-nfs wl-clipboard playerctl foot
+sudo pacman -S --needed hyprland swaybg waybar swayidle swww swaylock-effects wf-recorder rofi-lbonn-wayland dmenu brightnessctl mako cliphist grim slurp pamixer polkit-gnome starship nwg-look xdg-desktop-portal-hyprland xdg-user-dirs xdg-utils gvfs gvfs-mtp gvfs-nfs wl-clipboard playerctl foot network-manager-applet
 ```
 
 - **aur-packages**
