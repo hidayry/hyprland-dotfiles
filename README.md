@@ -46,13 +46,13 @@ cp -r home/* ~/
 Dependencies :
 
 ```sh
-sudo pacman -S --needed hyprland swaybg waybar swayidle swww swaylock-effects wf-recorder rofi-lbonn-wayland dmenu brightnessctl mako cliphist grim slurp pamixer polkit-gnome starship nwg-look xdg-desktop-portal-hyprland xdg-user-dirs xdg-utils gvfs gvfs-mtp gvfs-nfs wl-clipboard playerctl foot network-manager-applet grimshot
+sudo pacman -S --needed hyprland swaybg waybar mpd ncmpcpp swayidle swww swaylock-effects wf-recorder rofi-lbonn-wayland dmenu brightnessctl mako cliphist grim slurp pamixer polkit-gnome starship nwg-look xdg-desktop-portal-hyprland xdg-user-dirs xdg-utils gvfs gvfs-mtp gvfs-nfs wl-clipboard playerctl foot network-manager-applet grimshot
 ```
 
 - **aur-packages**
 
 ```sh
-yay -S --needed tela-circle-icon-theme-manjaro material-gtk-theme-deepocean-git wl-clipboard-history-git ttf-jetbrains-mono-nerd
+yay -S --needed tela-circle-icon-theme-manjaro material-gtk-theme-deepocean-git wl-clipboard-history-git ttf-jetbrains-mono-nerd mpdris2
 ```
 - **zap zsh**
 
