@@ -2,4 +2,4 @@
 
 pkill waybar
 sleep 0.1
-waybar -c ~/.config/waybar/hypr/config-hypr -s ~/.config/waybar/hypr/hypr_style.css &
+waybar -c ~/.config/waybar/hypr/config -s ~/.config/waybar/hypr/style.css &

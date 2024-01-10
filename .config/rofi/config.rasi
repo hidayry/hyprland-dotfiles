@@ -19,7 +19,8 @@ configuration{
 	me-accept-entry:			"MousePrimary";
 }
 
-@theme "catppuccin"
+/*****----- Global Properties -----*****/
+@theme                          "shared/colors.rasi"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
@@ -30,25 +31,25 @@ window {
     height: 360px;
     border: 2px;
     border-radius: 12px;
-    border-color: @border-col-hypr;
-    background-color: @bg-col;
+    border-color: @border;
+    background-color: @background;
 }
 
 mainbox {
-    background-color: @bg-col;
+    background-color: @background;
 }
 
 inputbar {
     children: [prompt,entry];
-    background-color: @bg-col;
+    background-color: @background;
     border-radius: 6px;
     padding: 2px;
 }
 
 prompt {
-    background-color: @blue;
+    background-color: @selected;
     padding: 6px;
-    text-color: @bg-col;
+    text-color: @background;
     border-radius: 3px;
     margin: 20px 0px 0px 20px;
 }
@@ -61,8 +62,8 @@ textbox-prompt-colon {
 entry {
     padding: 6px;
     margin: 20px 0px 0px 10px;
-    text-color: @fg-col;
-    background-color: @bg-col;
+    text-color: @foreground;
+    background-color: @background;
     placeholder:"Search";
 
 }
@@ -72,13 +73,13 @@ listview {
     padding: 6px 0px 0px;
     margin: 10px 0px 0px 20px;
     columns: 2;
-    background-color: @bg-col;
+    background-color: @background;
 }
 
 element {
     padding: 5px;
-    background-color: @bg-col;
-    text-color: @fg-col  ;
+    background-color: @background;
+    text-color: @foreground  ;
 }
 
 element-icon {
@@ -86,8 +87,8 @@ element-icon {
 }
 
 element selected {
-    background-color:  @blue ;
-    text-color: @selected-col  ;
+    background-color:  @selected ;
+    text-color: @background  ;
     border-radius: 3px;
 }
 
@@ -97,13 +98,13 @@ mode-switcher {
 
 button {
     padding: 10px;
-    background-color: @bg-col-light;
-    text-color: @grey;
+    background-color: @background;
+    text-color: @foreground;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
 }
 
 button selected {
-  background-color: @bg-col;
-  text-color: @blue;
+  background-color: @background;
+  text-color: @selected-alt;
 }

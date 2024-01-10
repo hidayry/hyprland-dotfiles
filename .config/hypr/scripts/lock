@@ -7,4 +7,4 @@ IMAGE_FOLDER="$HOME/.config/hypr/backgrounds"
 random_image=$(find "$IMAGE_FOLDER" -type f | shuf -n 1)
 
 # Set the image as the background using swaylock
-swaylock -f -i "$random_image" || playerctl stop
+swaylock -f -i "$random_image"

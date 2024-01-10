@@ -9,17 +9,19 @@
 |    Shell     | [zsh+zap](https://www.zapzsh.org/)-[starship](https://starship.rs/) |
 |   Launcher   |            [Rofi Wayland](https://github.com/lbonn/rofi)            |
 |  Clipboard   |           [Cliphist](https://github.com/sentriz/cliphist)           |
-| File Manager |                                nemo                                 |
+| File Manager |                                thunar                                 |
 
 ## 🖼️ Gallery
 
-![ss](./ss/2.png)
-
 ![ss](./ss/1.png)
+
+![ss](./ss/2.png)
 
 ![ss](./ss/3.png)
 
 ![ss](./ss/4.png)
+
+![ss](./ss/5.png)
 
 ## 💣 Setup Installation
 
@@ -44,13 +46,13 @@ cp -r home/* ~/
 Dependencies :
 
 ```sh
-sudo pacman -S --needed hyprland swaybg waybar swayidle swww swaylock-effects wf-recorder rofi-lbonn-wayland dmenu brightnessctl mako cliphist grim slurp pamixer polkit-gnome starship nwg-look xdg-desktop-portal-hyprland xdg-user-dirs xdg-utils gvfs gvfs-mtp gvfs-nfs wl-clipboard playerctl foot network-manager-applet
+sudo pacman -S --needed hyprland swaybg waybar swayidle swww swaylock-effects wf-recorder rofi-lbonn-wayland dmenu brightnessctl mako cliphist grim slurp pamixer polkit-gnome starship nwg-look xdg-desktop-portal-hyprland xdg-user-dirs xdg-utils gvfs gvfs-mtp gvfs-nfs wl-clipboard playerctl foot network-manager-applet grimshot
 ```
 
 - **aur-packages**
 
 ```sh
-yay -S --needed tela-circle-icon-theme-manjaro material-gtk-theme-deepocean-git wl-clipboard-history-git grimblast-git ttf-jetbrains-mono-nerd
+yay -S --needed tela-circle-icon-theme-manjaro material-gtk-theme-deepocean-git wl-clipboard-history-git ttf-jetbrains-mono-nerd
 ```
 - **zap zsh**
 

@@ -40,6 +40,7 @@ alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias clean="yay -Scc && sudo pacman -Scc"
 alias autoremove="sudo pacman -Qdtq | sudo pacman -Rs"
 alias update="yay -Syu"
+
 #music&video
 alias music="foot -e cmus"
 alias youtube="ytfzf -f -t -T sixel search_pattern"
